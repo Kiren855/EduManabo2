@@ -1,0 +1,206 @@
+.loading {
+    display: flex;
+    flex-direction: column; /* Cho spinner và text nằm dọc */
+    align-items: center;
+    justify-content: center;
+    height: auto; /* Chiếm toàn bộ chiều cao màn hình */
+    color: black; /* Màu chữ cho loading text */
+
+    .spinner {
+        width: 50px;
+        height: 50px;
+        border: 6px solid rgba(0, 0, 0, 0.1); /* Đường viền mờ */
+        border-top-color: #5022c3; /* Màu sắc của phần trên cùng */
+        border-radius: 50%; /* Tạo hình tròn */
+        animation: spin 1s ease-in-out infinite; /* Hiệu ứng quay */
+        margin-bottom: 1rem; /* Khoảng cách dưới spinner */
+    }
+
+    span {
+        font-size: 1.6rem; /* Kích thước chữ */
+        font-weight: bold; /* Đậm chữ */
+    }
+}
+
+/* Tạo animation quay */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin: 1rem 0;
+    color: #d8000c; /* Màu chữ đỏ nổi bật */
+
+    .error-icon {
+        margin-right: 0.5rem;
+        font-size: 1.5rem; /* Tăng kích thước icon */
+    }
+
+    span {
+        font-size: 1.6rem; /* Tăng kích thước chữ */
+        font-weight: bold; /* Đậm chữ */
+    }
+}
+
+.cart-title {
+    white-space: normal;
+    margin-bottom: 1.6rem;
+    color: #6a6f73;
+    display: block;
+}
+
+.toShopping span {
+    color: #5022c3;
+    display: block;
+}
+
+// wish list css
+.courses-container {
+    max-height: 58.8rem;
+    overflow: auto;
+    position: relative;
+}
+
+.course-card {
+    padding: 0.1rem;
+    color: #2d2f31 !important;
+    display: flex;
+    position: relative;
+    &:hover {
+        color: #5022c3;
+    }
+}
+
+.course-image {
+    width: 6.4rem;
+    height: 6.4rem;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+
+    img {
+        max-width: 100%;
+        height: auto;
+        vertical-align: middle;
+    }
+}
+
+.shopping-module {
+    padding: 0 0.8rem;
+    width: 19.2rem;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: left;
+}
+.course-container {
+    padding: 1.6rem;
+    border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+.course-title {
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+    &:hover {
+        color: #5022c3;
+    }
+}
+
+.course-creator {
+    color: #6a6f73;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.course-price {
+    align-items: center;
+    color: #2d2f31;
+    display: flex;
+    flex-flow: row wrap;
+    font-weight: bold;
+    padding: 0.4rem 0;
+}
+
+.add-to-cart {
+    margin-top: 0.8rem;
+
+    .add-to-cart-button {
+        width: 100%;
+        color: var(--color-gray-500);
+        background-color: transparent;
+        border: 1px solid #2d2f31;
+        height: 4rem;
+        position: relative;
+        align-items: center;
+        cursor: pointer;
+        display: inline-flex;
+        max-width: 100%;
+        min-width: 8rem;
+        font-weight: bold;
+        padding: 0 1.2rem;
+        justify-content: center;
+        vertical-align: bottom;
+        white-space: nowrap;
+
+        &:hover {
+            color: #5022c3;
+        }
+    }
+}
+
+//panel module footer css cho phan tu o duoi cuoi cung cua phan tu duoc hien thi khi icon duoc hober
+.panel-module-footer {
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.08), 0 -4px 12px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #d1d7dc;
+    padding: 1.6rem;
+    .link-to-page {
+        width: 100%;
+        white-space: nowrap;
+        background-color: var(--color-gray-500);
+        color: var(--color-white);
+        height: 4.8rem;
+        position: relative;
+        align-items: center;
+        border: none;
+        cursor: pointer;
+        display: inline-flex;
+        max-width: 100%;
+        min-width: 8rem;
+        padding: 0 1.2rem;
+        justify-content: center;
+        vertical-align: bottom;
+
+        span {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}
+
+.shopping-module-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.pd-1 {
+    padding: 1.6rem;
+}

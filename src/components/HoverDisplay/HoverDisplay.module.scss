@@ -1,0 +1,134 @@
+.title-hover {
+    padding: 1rem 1.2rem;
+    position: relative; /* Để chứa hover-box trong phạm vi của nó */
+    display: inline-block;
+    &:hover .title-hover-content {
+        color: #371783;
+    }
+
+    &:hover .icon-hover-content {
+        color: #371783;
+    }
+}
+
+.title-hover-content {
+    font-size: 1.4rem;
+    color: #2d2f31;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.icon-hover-content {
+    font-size: 2.2rem;
+    color: #2d2f31;
+    font-weight: 400;
+    line-height: 1.4;
+    position: relative; /* Để badge có thể nằm bên trên biểu tượng */
+    display: inline-block;
+}
+
+// badge ở trên icon shopping card, hay là giỏ hàng của người dùng.
+.badge {
+    width: 25px;
+    position: absolute;
+    top: -4px; /* Điều chỉnh vị trí dọc */
+    right: -7px; /* Điều chỉnh vị trí ngang */
+    background-color: #a435f0;
+    color: var(--color-white);
+    border-radius: 50%;
+    padding: 4px 2px;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//padding content category
+.pd-1 {
+    padding: 1.2rem;
+}
+
+.hover-content {
+    position: absolute;
+    top: 145%; /* Đặt khối nằm ngay dưới hover-content */
+    right: 0;
+    background-color: #fff;
+    color: black;
+    // padding: 1.2rem;
+    white-space: nowrap; /* Để nội dung không bị ngắt dòng */
+    z-index: 1000; /* Đảm bảo hover-box nằm trên các thành phần khác */
+    text-align: center;
+    width: 288px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 0 1px #d1d7dc, 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
+    .span-in {
+        margin-bottom: 1.6rem;
+        font-size: 1.8rem;
+        max-width: 36em;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: 0;
+        white-space: normal;
+    }
+
+    .cart-title {
+        white-space: normal;
+        margin-bottom: 1.6rem;
+        color: #6a6f73;
+    }
+}
+
+.title-link-hover {
+    width: 100%;
+    white-space: nowrap;
+    background-color: #2d2f31;
+    color: var(--color-white);
+    height: 4.8rem;
+    position: relative;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    max-width: 100%;
+    min-width: 8rem;
+    padding: 0 1.2rem;
+    justify-content: center;
+    vertical-align: bottom;
+
+    span {
+        color: white;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.toShopping span {
+    color: #5022c3;
+}
+
+// category title: css rieng khi phan hoverContent co noi dung truyen la mang
+.category-title {
+    padding: 0.4rem 0.8rem;
+
+    .category-link-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.4rem;
+        &:hover {
+            color: #5022c3;
+        }
+    }
+}
+
+.fs1 {
+    font-size: 1rem;
+}
+
+// css cho category khi ma thay doi chieu rong cua search component khien cho hoverContent bi che mat
+.extra-class {
+    right: -70px;
+}
