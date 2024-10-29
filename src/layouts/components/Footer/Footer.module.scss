@@ -1,0 +1,208 @@
+.footer {
+    width: 100%;
+    height: auto;
+}
+
+.footer-section {
+    padding-left: 4.8rem;
+    padding-right: 4.8rem;
+    background: #2d2f31;
+    border-top: 1px solid #3e4143;
+    color: #fff;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.teach-on-udemy-banner {
+    padding: 0 0 0 0.8rem;
+}
+
+.ud-heading-lg {
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-size: 1.6rem;
+    max-width: 36em;
+}
+
+.ud-text-md1 {
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: 1.6rem;
+    padding-top: 0.8rem;
+}
+
+.ud-text-md {
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: 1.6rem;
+    padding-top: 0.8rem;
+}
+
+.ud-btn {
+    position: relative;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    max-width: 100%;
+    min-width: 8rem;
+    padding: 0 1.2rem;
+    justify-content: center;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: bottom;
+    white-space: nowrap;
+}
+
+.ud-btn-white-outline,
+.ud-btn-white-outline.ud-btn-disabled {
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+.ud-btn-large {
+    height: 4.8rem;
+}
+
+.ud-heading-md {
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-size: 1.6rem;
+}
+
+.ud-btn .ud-btn-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ud-btn-primary,
+.ud-btn-white-outline,
+.ud-btn-brand {
+    color: var(--color-white) !important;
+}
+
+.ud-btn-white-outline:active,
+.ud-btn-white-outline:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.fs-main {
+    padding-top: 2.4rem;
+}
+
+.links-and-language-selector {
+    display: flex;
+}
+
+.language-selector-container {
+    padding: 0 0 2.4rem 0;
+    order: 1;
+    flex-shrink: 0;
+    margin-left: auto;
+    border-color: white;
+    color: white;
+}
+
+.language-selector-button-module--button--iLcUV {
+    justify-content: flex-start;
+    padding: 0 1.6rem;
+    min-width: 14rem;
+}
+
+.ud-btn-medium {
+    height: 4rem;
+}
+
+.ud-btn-secondary,
+.ud-btn-secondary.ud-btn-disabled {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+.ud-btn > :not(:first-child) {
+    margin-left: 0.4rem;
+}
+
+.ud-footer .link-column {
+    flex-basis: 25.6rem;
+    margin-right: 1.6rem;
+    margin-bottom: 0;
+}
+
+.ud-unstyled-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: none;
+}
+
+.ud-unstyled-list li {
+    padding-left: 0;
+}
+
+.ud-footer .white-link {
+    color: #fff;
+}
+
+.ud-footer .link {
+    display: block;
+    padding: 0.4rem 0;
+    color: #2d2f31;
+}
+
+.ud-text-sm {
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: 1.4rem;
+}
+
+.link {
+    color: white !important;
+}
+
+.link:hover {
+    text-decoration: underline #fff;
+}
+
+.logo-link {
+    display: flex;
+    img {
+        width: 33px;
+        height: 33px;
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+        font-family: fontLogo;
+        font-size: 2.2rem;
+        color: white;
+        position: relative;
+        left: -11px;
+        top: 3px;
+    }
+}
+
+.logo-and-copyright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6.4rem 4.8rem 3.2rem 4.8rem;
+    background-color: #2d2f31;
+}
+
+.ud-footer .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.copyright-container {
+    color: white;
+    font-weight: bold;
+}

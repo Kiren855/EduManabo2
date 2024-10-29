@@ -1,0 +1,70 @@
+.user-occupation {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 134rem;
+    padding: 3.2rem 0rem;
+    width: 100%;
+}
+
+.user-occupation > div:first-child {
+    /* Thẻ div chứa img */
+    flex-shrink: 0; /* Không cho div này co lại */
+}
+
+.user-avatar {
+    width: 6.4rem; /* Kích thước chiều rộng mong muốn */
+    height: 6.4rem; /* Kích thước chiều cao mong muốn */
+    border-radius: 50%; /* Bo tròn để tạo hình tròn */
+    object-fit: cover; /* Đảm bảo ảnh lấp đầy khung mà không bị méo */
+}
+
+.user-occupation > div:last-child {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 2.4rem;
+    min-width: 0.1rem;
+    word-break: break-word;
+
+    h3 {
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: 0;
+        max-width: 36em;
+        margin-bottom: 0.2rem;
+    }
+
+    span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #5022c3;
+        font-weight: bold;
+        font-size: 1.4rem;
+    }
+}
+
+// avatar default theo username
+.avatar-default {
+    background: #2d2f31;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100rem;
+    object-fit: cover;
+    color: white;
+    width: 6.4rem;
+    height: 6.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-size: clamp(1.8rem, calc(1.8rem + (2.4 - 1.8) * calc((100vw - 36rem) / (144 - 36))), 2.4rem);
+    max-width: 36em;
+}
+
+.user-occupation p {
+    font-size: 1.4rem;
+}

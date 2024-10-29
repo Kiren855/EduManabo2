@@ -1,0 +1,156 @@
+.mt-4 {
+    margin-top: 4.8rem;
+}
+
+/* Carousel.module.scss */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1292px;
+    margin: auto;
+    overflow: hidden;
+    text-align: center;
+
+    &-container {
+        display: flex;
+        justify-content: space-between; /* Tạo khoảng cách đều nhau giữa các phần tử */
+        gap: 20px;
+    }
+
+    &-item {
+        flex: 1; /* Chiếm đều khoảng cách bên trong phần tử cha */
+        text-align: center;
+        position: relative;
+        cursor: pointer;
+
+        &:hover img {
+            opacity: 0.8;
+        }
+
+        img {
+            width: 100%; /* Chiếm toàn bộ chiều rộng của thẻ div con */
+            height: 138px;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .best-seller {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: #ff5722; /* Màu nổi bật cho nhãn */
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ cho nhãn */
+            z-index: 1; /* Đảm bảo nhãn nằm trên cùng */
+        }
+    }
+
+    &-buttons {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+
+        button {
+            background-color: black;
+            color: white;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+        }
+
+        .prev-button {
+            position: absolute;
+            left: 0;
+        }
+
+        .next-button {
+            position: absolute;
+            right: 0;
+        }
+    }
+}
+
+// css cho phần chi tiết khóa học trong carousel
+.course-title {
+    background-color: #f9f9f9; /* Màu nền nhẹ để làm nổi bật nội dung */
+    padding-bottom: 7px;
+    border-radius: 8px; /* Bo góc cho thẻ */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    text-align: left;
+    max-width: 300px; /* Giới hạn chiều rộng của nội dung */
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px); /* Hiệu ứng nổi khi hover */
+    }
+
+    h3 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #333;
+        margin: 0 0 0.5rem 0; /* Khoảng cách bên dưới tiêu đề */
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Khoảng cách giữa các mục */
+        overflow: hidden;
+
+        span {
+            flex-shrink: 0; /* Đảm bảo các mục không co lại */
+            white-space: nowrap; /* Hiển thị trên một hàng */
+            overflow: hidden; /* Ẩn phần thừa */
+            text-overflow: ellipsis; /* Thêm dấu ... nếu quá dài */
+            max-width: 100px; /* Đặt chiều rộng tối đa để giữ dấu ... */
+        }
+    }
+
+    /* Tùy chỉnh cho từng mục riêng */
+    .course-author span {
+        color: #6a6f73; /* Màu nổi bật cho tên tác giả */
+        font-weight: 500;
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .course-rate span {
+        color: #2d2f31; /* Màu vàng cho đánh giá */
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        .icon-star {
+            margin-left: 0.4rem;
+            color: #b4690e;
+        }
+    }
+
+    .course-price strong {
+        color: black;
+        font-weight: 600;
+        font-size: 1.6rem;
+    }
+}

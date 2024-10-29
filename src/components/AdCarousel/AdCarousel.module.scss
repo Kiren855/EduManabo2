@@ -1,0 +1,56 @@
+/* AdCarousel.module.scss */
+.carousel {
+    position: relative;
+    max-width: 1340px;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+
+    &-slide {
+        width: 100%;
+        position: relative; /* Để định vị các phần tử con */
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &-text {
+        position: absolute; /* Định vị văn bản tuyệt đối */
+        top: 60px; /* Khoảng cách từ đỉnh */
+        left: 75px; /* Khoảng cách từ bên trái */
+        color: black; /* Màu chữ cho văn bản */
+        background-color: white; /* Nền mờ cho văn bản */
+        border-radius: 5px; /* Bo góc cho nền */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
+        padding: 2.4rem;
+        width: 440px;
+        height: auto;
+    }
+
+    .carousel-button {
+        position: absolute; /* Định vị nút tuyệt đối */
+        top: 50%; /* Căn giữa theo chiều dọc */
+        transform: translateY(-50%); /* Đẩy lên một nửa chiều cao nút */
+        background-color: black; /* Nền trong suốt */
+        border: none; /* Không có viền */
+        color: white; /* Màu chữ cho nút */
+        font-size: 24px; /* Kích thước icon */
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+
+        &.prev {
+            left: 10px; /* Cạnh trái */
+        }
+
+        &.next {
+            right: 10px; /* Cạnh phải */
+        }
+
+        &:hover {
+            background-color: rgb(71, 70, 70);
+        }
+    }
+}
