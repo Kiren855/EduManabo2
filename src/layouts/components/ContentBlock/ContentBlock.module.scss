@@ -1,0 +1,49 @@
+.content-block {
+    border: 1px solid #d1d7dc;
+    padding: 2.4rem 0;
+    margin-bottom: 3.2rem;
+    padding-bottom: 1.6rem;
+
+    h2 {
+        margin: 0 2.4rem 1.6rem 2.4rem;
+    }
+}
+
+.content {
+    display: flex;
+    justify-content: space-between; /* Chia đều không gian giữa các cột */
+    margin: 0 2.4rem;
+    gap: 20px;
+
+    ul {
+        list-style: disc;
+        list-style-position: inside;
+        padding-left: 0;
+    }
+}
+
+.left-column,
+.right-column {
+    flex: 1; /* Cả hai cột chiếm không gian bằng nhau */
+}
+
+.element-container {
+    display: flex;
+    align-items: flex-start; /* Căn thẳng hàng theo chiều dọc */
+}
+
+.icon {
+    width: 20px; /* Đặt kích thước cố định cho icon */
+    flex-shrink: 0; /* Đảm bảo icon không bị co lại */
+    margin-right: 8px; /* Khoảng cách giữa icon và text */
+    color: gray; /* Màu sắc của icon */
+}
+
+.element-title {
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    line-height: 1.5; /* Điều chỉnh line-height cho dễ đọc */
+    text-align: justify;
+    word-break: break-word; /* Tự động ngắt dòng khi từ quá dài */
+}
