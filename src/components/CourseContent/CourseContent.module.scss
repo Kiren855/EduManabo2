@@ -1,0 +1,71 @@
+.course-content {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 16px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 3.2rem;
+}
+
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+
+    span {
+        font-size: 1.4rem;
+    }
+}
+
+.course-header h2 {
+    font-size: 2.4rem;
+    margin: 0;
+}
+
+.course-header button {
+    background-color: transparent;
+    color: rgb(80, 34, 195);
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.course-section {
+    border-top: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+
+    .icon {
+        margin-right: 15px;
+    }
+}
+
+.section-header span {
+    font-size: 14px;
+    color: black;
+}
+
+.lectures {
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.lecture-item {
+    font-size: 14px;
+    color: #999;
+    display: flex;
+    padding: 0.8rem 0;
+    justify-content: space-between;
+
+    .icon {
+        color: rgb(109, 108, 108);
+        margin-right: 12px;
+    }
+}

@@ -1,0 +1,397 @@
+.dark-bg {
+    background-color: #2d2f31;
+    padding: 3.2rem 0 3.2rem 0;
+}
+
+.bg-inner {
+    max-width: 118.4rem;
+    margin: 0 auto;
+}
+
+.position-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.child-content {
+    width: auto;
+    overflow: hidden;
+    color: white;
+}
+
+// css cho phần video có nút play
+.sidebar-container {
+    position: relative;
+    width: 100%; /* Tùy chỉnh chiều rộng theo ý muốn */
+    border: 1px solid #d1d7dc;
+    // display: inline-block;
+}
+
+// overlay do bong cho hinh video preview
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Màu nền bán trong suốt */
+}
+
+.sidebar-container-bottom {
+    position: absolute;
+    background-color: white;
+    color: black;
+    width: 340px;
+    padding: 2.4rem;
+}
+
+.parent-container {
+    display: flex;
+    flex-direction: column; /* Hiển thị các phần tử con theo chiều dọc */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* tạo shadow nhẹ */
+    .child {
+        flex: 1; /* Cho phép phần tử con chiếm hết chiều rộng */
+        margin: 5px 0;
+
+        .price-title {
+            font-size: 3.2rem;
+            font-weight: bold;
+        }
+
+        .wishList {
+            display: flex;
+            justify-content: space-between;
+
+            .button-card {
+                flex: 1;
+                margin-right: 10px;
+
+                .btn-cd {
+                    width: 100%;
+                    background-color: #a435f0;
+                    color: white;
+                    height: 4.8rem;
+                    max-width: 100%;
+                    min-width: 8rem;
+                    padding: 0 1.2rem;
+                    font-weight: bold;
+                    font-size: 1.6rem;
+                    cursor: pointer;
+                }
+            }
+
+            .heart {
+                background-color: transparent;
+                border: 1px solid #2d2f31;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .heart-btn {
+                    padding: 0 1.2rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: none; /* loại bỏ background mặc định của button */
+                    border: none; /* loại bỏ border mặc định của button */
+                    cursor: pointer;
+                    font-size: 24px; /* kích thước icon */
+                }
+            }
+        }
+
+        .buy {
+            background-color: transparent;
+            border: 1px solid #2d2f31;
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+            justify-content: center;
+            width: 100%; /* hoặc width cụ thể nếu cần */
+            height: 100%; /* hoặc height cụ thể nếu cần */
+            cursor: pointer;
+
+            .buy-btn {
+                padding: 0 1.2rem;
+                display: flex;
+                height: 4.8rem;
+                align-items: center;
+                justify-content: center;
+                background: none; /* loại bỏ background mặc định của button */
+                border: none; /* loại bỏ border mặc định của button */
+                font-size: 16px; /* kích thước icon */
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.money-back {
+    display: block;
+    font-size: 1.2rem;
+    margin-top: 1.6rem;
+    text-align: center;
+    margin-bottom: 0.8rem;
+}
+
+// css cho phần list khóa học này bao gồm
+
+.course-content h2 {
+    color: #333;
+    margin-bottom: 8px;
+    max-width: 118.4rem;
+    font-size: 1.6rem;
+}
+
+.course-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.course-content ul li {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #555;
+    padding: 4px 0;
+
+    span {
+        margin-right: 10px;
+        font-size: 16px;
+    }
+
+    .icon {
+        display: inline-flex;
+        width: 24px; /* Đặt kích thước cố định để căn lề */
+        justify-content: center;
+        margin-right: 8px; /* Khoảng cách giữa icon và text */
+    }
+}
+
+.paid-course {
+    padding-top: 3.2rem;
+    max-width: 118.4rem;
+    margin: 0 auto;
+
+    .landing-page {
+        max-width: 70rem;
+    }
+}
+
+// css cho phan coupon
+.coupon-title {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.coupon-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px dashed #d1d7dc;
+    font-size: 1.2rem;
+}
+
+.coupon-info {
+    color: rgb(106, 111, 115);
+}
+
+.coupon-remove-btn {
+    background: none;
+    border: none;
+    color: rgb(80, 34, 195);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.coupon-form {
+    display: flex;
+}
+
+.coupon-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #2d2f31;
+    font-size: 16px;
+}
+
+.coupon-input:focus {
+    outline: none;
+}
+
+.coupon-apply-btn {
+    padding: 8px 12px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    min-width: 8rem;
+}
+
+.coupon-apply-btn:hover {
+    background-color: #005bb5;
+}
+
+.course-image {
+    width: 100%;
+    height: 191px;
+    display: block;
+    object-fit: cover;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px; /* Tăng/giảm kích thước icon Play */
+    color: black;
+    background-color: white; /* Tạo nền đen mờ */
+    border-radius: 50%; /* Bo tròn nền để tạo hiệu ứng nút */
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Hiệu ứng chuyển đổi khi hover */
+}
+
+.video-trailer {
+    min-width: 340px;
+}
+
+.clp-lead {
+    margin-bottom: 1.6rem;
+}
+
+.mw-7 {
+    max-width: 70rem;
+}
+
+.mb-2 {
+    margin-bottom: 2.4rem;
+}
+
+.fs-18 {
+    font-size: 1.8rem;
+}
+
+.element-row {
+    display: flex;
+    gap: 10px;
+    font-size: 1.4rem;
+
+    a {
+        color: rgb(192, 196, 252);
+        text-decoration: underline;
+    }
+}
+
+.star {
+    color: #f69c08;
+    font-weight: bold;
+}
+
+.clp-lead .link-author {
+    color: rgb(192, 196, 252);
+    text-decoration: underline;
+    margin-left: 1rem;
+}
+
+.element-row-spec {
+    display: flex;
+    gap: 20px;
+    font-size: 1.4rem;
+}
+
+// css cho phần giới thiệu giảng viên
+.instructor-container {
+    font-family: Arial, sans-serif;
+    color: #333;
+    min-width: 100%;
+    margin: 0 auto;
+    margin-bottom: 3.2rem;
+}
+
+.instructor-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.paid-course .instructor-container a {
+    color: rgb(80, 34, 195);
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.instructor-container a:hover {
+    text-decoration: underline;
+}
+
+.instructor-container span {
+    display: block;
+    margin-top: 4px;
+    font-style: italic;
+    color: rgb(106, 111, 115);
+}
+
+.instructor-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.instructor-profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.instructor-stats {
+    font-size: 14px;
+    color: #333;
+}
+
+.instructor-stats p {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.instructor-stats p svg {
+    width: 18px;
+    margin-right: 5px;
+    color: black; /* Màu vàng cho icon xếp hạng */
+}
+
+.instructor-description {
+    margin-top: 15px;
+    line-height: 1.6;
+    color: #444;
+    font-size: 14px;
+}
+
+.mb-2 .author-related {
+    color: rgb(80, 34, 195);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.course-related {
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+}

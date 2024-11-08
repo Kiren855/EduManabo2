@@ -6,7 +6,6 @@ import {
     faMedal,
 } from '@fortawesome/free-solid-svg-icons';
 
-
 const cx = classNames.bind(styles)
 
 
