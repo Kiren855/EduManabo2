@@ -20,7 +20,27 @@ function App() {
               Layout = Fragment;
             }
 
-            return (
+            return route.children ? (
+              // Nếu có route con, sử dụng Route cha và lặp qua các route con
+              <Route
+                key={index}
+                path={route.path}
+                element={
+                  <Layout>
+                    <Page />
+                  </Layout>
+                }
+              >
+                {route.children.map((child, idx) => (
+                  <Route
+                    key={idx}
+                    path={child.path}
+                    element={<child.component />}
+                  />
+                ))}
+              </Route>
+            ) : (
+              // Nếu không có route con, render như trước
               <Route
                 key={index}
                 path={route.path}
