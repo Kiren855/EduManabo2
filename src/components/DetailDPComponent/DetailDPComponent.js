@@ -46,7 +46,7 @@ const DetailDPComponent = (props) => {
                         extraCss={{
                             padding: "0.7rem",
                             margin: 0,
-                            fontSize: "1.1rem",
+                            fontSize: "1.6rem",
                             border: "none",
                         }}
                     />

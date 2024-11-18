@@ -1,0 +1,120 @@
+// CSS (QuizComponent.css)
+.quiz-container {
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+.question-container {
+    margin-left: 10rem;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.question-text {
+    margin-bottom: 10px;
+}
+
+.answers-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.answer-option {
+    margin: 5px 0;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.answer-option:hover {
+    transform: scale(1.05);
+}
+
+.answer-option input[type='radio'],
+.answer-option input[type='checkbox'] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.custom-checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #f9f9f9;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.answer-option input:checked ~ .custom-checkbox {
+    background-color: rgb(164, 53, 240);
+    border-color: rgb(164, 53, 240);
+    animation: likeEffect 0.5s ease-out;
+    box-shadow: 0 0 20px rgba(164, 53, 240, 0.7);
+}
+
+.custom-checkbox:after {
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+.answer-option input:checked ~ .custom-checkbox:after {
+    display: block;
+}
+
+.answer-option .custom-checkbox:after {
+    left: 5px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.single-answer input[type='radio'] + .custom-checkbox {
+    border-radius: 50%;
+}
+
+.multiple-answers input[type='checkbox'] + .custom-checkbox {
+    border-radius: 4px;
+}
+
+@keyframes likeEffect {
+    0% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(1.3);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.single-answer input[type='radio'] {
+    margin-right: 10px;
+}
+
+.multiple-answers input[type='checkbox'] {
+    margin-right: 10px;
+}

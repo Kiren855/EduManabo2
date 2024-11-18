@@ -29,6 +29,14 @@ const images = {
     playIcon: require('~/assets/images/play-button.png'),
     openFolderIcon: require('~/assets/images/open-folder.png'),
     teachIcon: require('~/assets/images/teach.png'),
+    crossIcon: require('~/assets/images/close.png'),
+    emptyCartImg: require('~/assets/images/empty-shopping-cart.jpg'),
+    plusIcon: require('~/assets/images/plus.png'),
+    folderIcon: require('~/assets/images/folder.png'),
+    dotsIcon: require('~/assets/images/dots.png'),
+    editIcon: require('~/assets/images/pencil.png'),
+    minusIcon: require('~/assets/images/minus.png'),
+    heartIcon: require('~/assets/images/heart.png'),
 };
 
 export default images;

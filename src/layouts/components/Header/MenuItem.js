@@ -16,6 +16,7 @@ import {
     faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { faHeart, faBell } from '@fortawesome/free-regular-svg-icons';
+import config from '~/config';
 
 //Menu hiển thị khi người dùng chưa đăng nhập 
 export const MENU_ITEMS = [
@@ -94,49 +95,49 @@ export const userMenu = [
     {
         icon: <FontAwesomeIcon icon={faBookBookmark} />,
         title: 'Học tập',
-        to: '/@hoaa',
+        to: `${config.routes.userMyCourse}/learning`,
     },
     {
         icon: <FontAwesomeIcon icon={faCartShopping} />,
         title: 'Giỏ hàng của tôi',
-        to: '/coin',
+        to: `${config.routes.cart}`,
     },
     {
         icon: <FontAwesomeIcon icon={faHeart} />,
         title: 'Mong muốn',
-        to: '/settings',
+        to: `${config.routes.userMyCourse}/wishlist`,
     },
     {
         icon: <FontAwesomeIcon icon={faChalkboardUser} />,
         title: 'Giảng dạy trên Edumanabo',
-        to: '/logout',
+        to: '/',
         separate: true,
     },
     {
         icon: <FontAwesomeIcon icon={faBell} />,
         title: 'Thông báo',
-        to: '/logout',
+        to: '/',
     },
     {
         icon: <FontAwesomeIcon icon={faMessage} />,
         title: 'Tin nhắn',
-        to: '/logout',
+        to: '/',
         separate: true,
     },
     {
         icon: <FontAwesomeIcon icon={faGear} />,
         title: 'Cài đặt tài khoản',
-        to: '/logout',
+        to: '/',
     },
     {
         icon: <FontAwesomeIcon icon={faCreditCard} />,
         title: 'Phương thức thanh toán',
-        to: '/logout',
+        to: '/',
     },
     {
         icon: <FontAwesomeIcon icon={faCoins} />,
         title: 'Lịch sử mua',
-        to: '/logout',
+        to: '/',
         separate: true,
     },
     {
@@ -202,18 +203,18 @@ export const userMenu = [
     {
         icon: <FontAwesomeIcon icon={faUser} />,
         title: 'Hồ sơ công khai',
-        to: '/logout',
+        to: '/',
     },
     {
         icon: <FontAwesomeIcon icon={faUserPen} />,
         title: 'Chỉnh sửa hồ sơ',
-        to: '/logout',
+        to: '/',
         separate: true,
     },
     {
         icon: <FontAwesomeIcon icon={faQuestion} />,
         title: 'Trợ giúp và hỗ trợ',
-        to: '/logout',
+        to: '/',
     },
     {
         icon: <FontAwesomeIcon icon={faSignOut} />,

@@ -1,0 +1,102 @@
+.checkout {
+    width: 300px;
+    font-family: Arial, sans-serif;
+    margin-left: 6.4rem;
+    margin-top: 84px;
+}
+
+.total-section {
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.total-label {
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-bottom: 4px;
+    color: #6a6f73;
+}
+
+.total-price {
+    font-size: 3.2rem;
+    color: #3c3c3c;
+    font-weight: bold;
+    margin: 0;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #6a6f73;
+    font-size: 1.6rem;
+}
+
+.discount-percent {
+    color: black;
+    font-size: 1.6rem;
+}
+
+.checkout-button {
+    width: 100%;
+    padding: 1.4rem;
+    background-color: #a435f0;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 12px;
+    font-size: 1.6rem;
+}
+
+.coupon-section {
+    margin-top: 1.6rem;
+    border-top: 1px solid #d1d7dc;
+    padding-top: 1.6rem;
+}
+
+.coupon-label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.applied-coupon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px dashed #888;
+    padding: 8px;
+    margin-bottom: 8px;
+}
+
+.applied-coupon p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.remove-coupon {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+}
+
+.coupon-input-section {
+    display: flex;
+    align-items: center;
+}
+
+.coupon-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    margin-right: 8px;
+    font-size: 14px;
+}
+
+.apply-button {
+    padding: 8px 12px;
+    background-color: #a156e2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
