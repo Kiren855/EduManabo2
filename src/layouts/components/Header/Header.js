@@ -93,11 +93,11 @@ function Header() {
                     <>
                         <HoverDisplay
                             type="shopping"
-                            to={config.routes.home}
+                            to={config.routes.cart}
                             Content={<FontAwesomeIcon icon={faCartShopping} />}
                             isIcon={true}
                             hoverContent="Giỏ hàng của bạn đang trống."
-                            linkHover={config.routes.home}
+                            linkHover={config.routes.cart}
                             titleLinkHover="Tiếp tục mua sắm"
                         >
                         </HoverDisplay>
@@ -109,7 +109,7 @@ function Header() {
                         <>
                             <HoverDisplay
                                 type="wishList"
-                                to={config.routes.home}
+                                to={`${config.routes.userMyCourse}/wishlist`}
                                 Content={<FontAwesomeIcon icon={faHeart} />}
                                 isIcon={true}
                                 hoverContent="Danh sách mong ước của bạn đang trống."
@@ -119,11 +119,11 @@ function Header() {
 
                             <HoverDisplay
                                 type="shopping"
-                                to={config.routes.home}
+                                to={config.routes.cart}
                                 Content={<FontAwesomeIcon icon={faCartShopping} />}
                                 isIcon={true}
                                 hoverContent="Giỏ hàng của bạn đang trống."
-                                linkHover={config.routes.home}
+                                linkHover={config.routes.cart}
                                 titleLinkHover="Tiếp tục mua sắm"
                                 itemCount={1000}
                             />
