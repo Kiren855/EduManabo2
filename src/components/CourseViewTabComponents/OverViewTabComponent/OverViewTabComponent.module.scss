@@ -1,0 +1,102 @@
+.outerDiv {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    color: var(--gray);
+}
+
+.box {
+    width: 100%;
+    height: auto;
+}
+
+.ttl {
+    font-size: 1.8rem;
+}
+
+.desc {
+    font-size: 1.6rem;
+    margin: 0.8rem 0;
+}
+
+.box1 {
+    padding: 1rem 0;
+    display: flex;
+    gap: 1rem;
+    border-top: 1px solid var(--gray86);
+    // width: 100%;
+}
+
+.sTtl {
+    width: 100%;
+    max-width: 25%;
+    // font-size: 1.4rem;
+}
+
+.sinBox {
+    width: 100%;
+}
+
+.item {
+    font-size: 1.6rem;
+    margin: 0.5rem 0;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.ttlTxt {
+    margin-bottom: 1rem;
+}
+
+.crsDesc {
+    overflow-wrap: break-word; /* Tự động xuống dòng khi cần */
+    word-break: break-word; /* Phá từ nếu từ quá dài */
+    max-width: 100%;
+    text-align: justify;
+}
+
+.link {
+    font-weight: 500;
+    margin: 0 0.5rem;
+    color: var(--purple-dark);
+    text-underline-offset: 0.2rem;
+}
+
+.instructorBox {
+    display: flex;
+    gap: 1rem;
+}
+
+.instImg {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.instName {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.instTtl {
+    font-size: 1.4rem;
+}
+
+.instDesc {
+    margin: 0.5rem 0;
+    font-size: 1.6rem;
+}
+
+@media screen and (max-width: 426px) {
+    .outerDiv {
+        padding: 0.5rem;
+    }
+    .box1 {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .sTtl {
+        max-width: 100%;
+    }
+}

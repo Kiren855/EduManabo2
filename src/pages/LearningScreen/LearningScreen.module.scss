@@ -1,0 +1,54 @@
+.video-learning-screen {
+    display: flex;
+    width: 100%;
+    height: auto;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.lesson-sidebar {
+    width: 20%;
+    background-color: #fff;
+    border-right: 1px solid #eaeaea;
+    overflow-y: auto;
+}
+
+.main-content {
+    width: calc(100% - 41.6rem);
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0px 0px 0px;
+    margin-top: 50px;
+    gap: 16px;
+    flex-grow: 1;
+}
+
+.video-player {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    position: relative;
+}
+
+.lesson-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+}
+
+.comment-section {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notes-section {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
