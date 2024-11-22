@@ -7,6 +7,8 @@ const routes = {
     cart: '/cart',
     userMyCourse: '/user/my-courses',
     auth: '/auth',
+    instructorPage: '/user/profile',
+    createCourse: '/courses/create/:id',
 };
 
 export default routes;

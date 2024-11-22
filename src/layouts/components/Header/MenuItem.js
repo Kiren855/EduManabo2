@@ -110,7 +110,7 @@ export const userMenu = [
     {
         icon: <FontAwesomeIcon icon={faChalkboardUser} />,
         title: 'Giảng dạy trên Edumanabo',
-        to: '/',
+        to: `${config.routes.instructorPage}`,
         separate: true,
     },
     {
@@ -127,7 +127,7 @@ export const userMenu = [
     {
         icon: <FontAwesomeIcon icon={faGear} />,
         title: 'Cài đặt tài khoản',
-        to: '/',
+        to: '/user/profile/account',
     },
     {
         icon: <FontAwesomeIcon icon={faCreditCard} />,
@@ -137,7 +137,7 @@ export const userMenu = [
     {
         icon: <FontAwesomeIcon icon={faCoins} />,
         title: 'Lịch sử mua',
-        to: '/',
+        to: '/history',
         separate: true,
     },
     {
@@ -203,18 +203,18 @@ export const userMenu = [
     {
         icon: <FontAwesomeIcon icon={faUser} />,
         title: 'Hồ sơ công khai',
-        to: '/',
+        to: '/profile/public',
     },
     {
         icon: <FontAwesomeIcon icon={faUserPen} />,
         title: 'Chỉnh sửa hồ sơ',
-        to: '/',
+        to: '/user/profile/settings',
         separate: true,
     },
     {
         icon: <FontAwesomeIcon icon={faQuestion} />,
         title: 'Trợ giúp và hỗ trợ',
-        to: '/',
+        to: '/help',
     },
     {
         icon: <FontAwesomeIcon icon={faSignOut} />,

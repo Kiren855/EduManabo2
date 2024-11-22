@@ -36,7 +36,7 @@ const CheckoutCourseCard = ({ originalPrice, discountPrice, }) => {
                 {appliedCoupon ? (
                     <div className={cx('applied-coupon')}>
                         <p>Đã áp dụng <b>{appliedCoupon}</b></p>
-                        <p>Coupon của Udemy</p>
+                        <p>Coupon của Edumanabo</p>
                         <button className={cx('remove-coupon')} onClick={handleRemoveCoupon}>✕</button>
                     </div>
                 ) : null}

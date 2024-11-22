@@ -99,8 +99,8 @@ function LearningScreen() {
         <div className={cx('video-learning-screen')}>
             <CourseVideoNavbar data={data} />
             <div className={cx('main-content')}>
-                <VideoPlayer onToggleExpandedView={handleToggleExpandedView} lesson={lesson} />
-                {/* <QuizComponent questions={questions} /> */}
+                {/* <VideoPlayer onToggleExpandedView={handleToggleExpandedView} lesson={lesson} /> */}
+                <QuizComponent questions={questions} />
                 <CourseViewTabComponent />
                 <Footer />
             </div>

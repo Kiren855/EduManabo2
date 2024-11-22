@@ -70,8 +70,6 @@ function Footer() {
                 </div>
                 <div className={cx('copyright-container', 'ud-text-xs')}>© 2024 Edumanabo, Inc.</div>
             </div>
-
-
         </footer>
     );
 }

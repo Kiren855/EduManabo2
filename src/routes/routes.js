@@ -24,6 +24,14 @@ import WishListComponent from '~/components/MyCourses/WishListComponent';
 import ArchivedComponent from '~/components/MyCourses/ArchivedComponent';
 import Auth from '~/pages/Auth';
 import NothingLayout from '~/layouts/NothingLayout';
+import ProfilePage from '~/pages/ProfilePage';
+import InstructorCoursePage from '~/pages/InstructorCoursePage';
+import ResourcesComponent from '~/components/ResourcesComponent';
+import ProfileSettings from '~/components/User/ProfileSettings';
+import AccountSettings from '~/components/User/AccountSettings';
+import NotFound from '~/pages/NotFound';
+import CreateCourse from '~/components/InstructorComponents';
+import { HeaderOnly } from '~/layouts';
 
 // Public routes
 const publicRoutes = [
@@ -45,7 +53,7 @@ const publicRoutes = [
             { path: "reviews", component: ReviewsTabComponent },
         ],
     },
-    { path: config.routes.cart, component: Cart, layout: Layout1 },
+    { path: config.routes.cart, component: Cart },
     {
         path: config.routes.userMyCourse,
         component: MyCourse,
@@ -58,7 +66,23 @@ const publicRoutes = [
             { path: "archived", component: ArchivedComponent },
         ],
     },
-
+    {
+        path: config.routes.instructorPage,
+        component: ProfilePage,
+        layout: NothingLayout,
+        children: [
+            { path: "", component: InstructorCoursePage },
+            { path: "courses", component: InstructorCoursePage },
+            { path: "communication", component: ResourcesComponent },
+            { path: "performance", component: ResourcesComponent },
+            { path: "settings", component: ProfileSettings },
+            { path: "account", component: AccountSettings },
+            { path: "tools", component: ResourcesComponent },
+            { path: "resources", component: ResourcesComponent },
+        ],
+    },
+    { path: "*", component: NotFound },
+    { path: config.routes.createCourse, component: CreateCourse, layout: HeaderOnly },
 ];
 
 const privateRoutes = [];
