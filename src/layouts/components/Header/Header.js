@@ -52,7 +52,7 @@ function Header() {
                     Content="Explore"
                     hoverContent={category}
                     linkHover={config.routes.home}
-                    titleLinkHover="Dùng thử Udemy Business"
+                    titleLinkHover="Dùng thử Manabo Business"
                 />
 
                 <Search />
@@ -60,15 +60,15 @@ function Header() {
                 <div>
                     <HoverDisplay
                         to={config.routes.home}
-                        Content="EduManabo Business"
-                        hoverContent="Cho phép nhóm của bạn truy cập vào hơn 27.000 khóa học hàng đầu của Udemy, ở mọi nơi và mọi lúc."
+                        Content="EM Business"
+                        hoverContent="Cho phép nhóm của bạn truy cập vào hơn 27.000 khóa học hàng đầu của Edumanabo, ở mọi nơi và mọi lúc."
                         linkHover={config.routes.home}
-                        titleLinkHover="Dùng thử Udemy Business"
+                        titleLinkHover="Dùng thử Manabo Business"
                     />
 
                     <HoverDisplay
                         to={config.routes.home}
-                        Content="Teaching on Edumanabo"
+                        Content="Teaching on EM"
                         hoverContent="Biến kiến thức của bạn thành cơ hội và tiếp cận với hàng triệu người trên thế giới."
                         linkHover={config.routes.home}
                         titleLinkHover="Tìm hiểu thêm"

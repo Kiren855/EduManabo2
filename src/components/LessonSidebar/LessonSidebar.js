@@ -12,8 +12,8 @@ function LessonSidebar({ currentLessonId, onChangeLesson }) {
     return (
         <div className={cx('course-content')}>
             <DetailDPComponent
-                title="Take a Udemy Assessment to check your skills"
-                desc="Made by Udemy, this generalized assessment is a great way to check in on your skills."
+                title="Take a Edumanabo Assessment to check your skills"
+                desc="Made by Edumanabo, this generalized assessment is a great way to check in on your skills."
                 btnTxt="Launch Assessment"
             />
             <CourseContentComponent

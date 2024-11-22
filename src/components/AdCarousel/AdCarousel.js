@@ -21,7 +21,7 @@ const slides1 = [
 const slides2 = [
     {
         image: images.adcarousel2,
-        text: 'Nếu bạn là người mới sử dụng Udemy thì đây là một tin vui dành cho bạn: Trong thời gian có hạn, các khóa học có giá chỉ từ ₫ 299.000 cho học viên mới! Mua ngay.',
+        text: 'Nếu bạn là người mới sử dụng Edumanabo thì đây là một tin vui dành cho bạn: Trong thời gian có hạn, các khóa học có giá chỉ từ ₫ 299.000 cho học viên mới! Mua ngay.',
         title: 'Tham gia học tập với chi phí thấp hơn'
     },
     {

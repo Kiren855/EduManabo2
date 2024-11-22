@@ -52,7 +52,7 @@ const OverViewTabComponent = () => {
             name: "CNG 03",
             img: "https://i.pinimg.com/736x/f8/d0/a2/f8d0a28f230f2f0bfa84452e5c36efd8.jpg",
             ttl: "Engineering Architect",
-            desc: "CNG 03 has been building complex Javascript front ends for top corporations in the San Francisco Bay Area.  With an innate ability to simplify complex topics, Stephen has been mentoring engineers beginning their careers in software development for years, and has now expanded that experience onto Udemy, authoring the highest rated React course. He teaches on Udemy to share the knowledge he has gained with other software engineers.  Invest in yourself by learning from Stephen's published courses.",
+            desc: "CNG 03 has been building complex Javascript front ends for top corporations in the San Francisco Bay Area.  With an innate ability to simplify complex topics, Stephen has been mentoring engineers beginning their careers in software development for years, and has now expanded that experience onto Edumanabo, authoring the highest rated React course. He teaches on Edumanbo to share the knowledge he has gained with other software engineers.  Invest in yourself by learning from Stephen's published courses.",
         },
     };
 
