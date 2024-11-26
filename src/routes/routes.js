@@ -32,6 +32,7 @@ import AccountSettings from '~/components/User/AccountSettings';
 import NotFound from '~/pages/NotFound';
 import CreateCourse from '~/components/InstructorComponents';
 import { HeaderOnly } from '~/layouts';
+import CoursePlanPage from '~/pages/CoursePlanPage';
 
 // Public routes
 const publicRoutes = [
@@ -83,6 +84,7 @@ const publicRoutes = [
     },
     { path: "*", component: NotFound },
     { path: config.routes.createCourse, component: CreateCourse, layout: HeaderOnly },
+    { path: config.routes.editCourse, component: CoursePlanPage, layout: NothingLayout },
 ];
 
 const privateRoutes = [];

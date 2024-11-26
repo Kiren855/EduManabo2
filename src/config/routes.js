@@ -8,7 +8,8 @@ const routes = {
     userMyCourse: '/user/my-courses',
     auth: '/auth',
     instructorPage: '/user/profile',
-    createCourse: '/courses/create/:id',
+    createCourse: '/courses/create',
+    editCourse: '/courses/edit/:courseID',
 };
 
 export default routes;

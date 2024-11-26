@@ -82,7 +82,7 @@ const InstructorNavbar = () => {
                                     <span>
                                         <div className={css.menuItemTxt1}>Edumanabo Bussiness</div>
                                         <div className={css.menuItemTxt2}>
-                                            Bring learning to your company
+                                            Mang việc học đến với công ty của bạn
                                         </div>
                                     </span>
                                     <span>

@@ -19,7 +19,7 @@ function Comments() {
         id: i + 1,
         username: `User ${i + 1}`,
         avatar: `https://i.pravatar.cc/150?img=${i + 1}`, // Link ảnh đại diện ngẫu nhiên
-        content: `Đây là bình luận ${i + 1}`,
+        content: `Đây là đánh giá ${i + 1}`,
         stars: Math.floor(Math.random() * 5) + 1,
         time: `${Math.floor(Math.random() * 24)} giờ trước`
     }));
@@ -58,7 +58,7 @@ function Comments() {
 
     return (
         <div className={cx('comments-section')}>
-            <h3>Bình luận gần đây</h3>
+            <h3>Đánh giá gần đây</h3>
             <div className={cx('recent-comments')}>
                 {recentComments.map((comment) => (
                     <div key={comment.id} className={cx('comment-item')}>
@@ -75,7 +75,7 @@ function Comments() {
                 ))}
             </div>
             <button onClick={handleOpenModal} className={cx('show-more-button')}>
-                Hiển thị thêm bình luận
+                Hiển thị thêm đánh giá
             </button>
 
             {showModal && (

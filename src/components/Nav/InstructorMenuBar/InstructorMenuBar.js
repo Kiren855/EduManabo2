@@ -9,7 +9,7 @@ const InstructorMenuBar = () => {
     return (
         <div className={css.outerDiv}>
             <div className={css.menuItem}>
-                <Link to="/" className={css.iconBox}>
+                <Link to="/user/profile/courses" className={css.iconBox}>
                     <img className={css.icon} src={images.smallLogoIcon} alt="icon" />
                 </Link>
             </div>

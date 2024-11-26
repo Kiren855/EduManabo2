@@ -1,3 +1,10 @@
+.container {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .plainTxt {
     margin: 4rem 0;
     text-align: center;

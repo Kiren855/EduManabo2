@@ -1,0 +1,287 @@
+.curriculum-section {
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.add-section-button {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid #007bff;
+    background-color: white;
+    color: #007bff;
+    border-radius: 4px;
+}
+
+.sections {
+    margin-top: 20px;
+}
+
+.section {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: white;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.section-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-button,
+.delete-button {
+    padding: 4px 8px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.edit-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.delete-button {
+    background-color: red;
+    color: white;
+}
+
+.add-item-button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid #007bff;
+    background-color: white;
+    color: #007bff;
+    border-radius: 4px;
+}
+
+.form-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form input,
+.form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.section-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.move-button {
+    padding: 4px 8px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #6c757d;
+    color: white;
+}
+
+.move-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.cancel-button,
+.save-button {
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.cancel-button {
+    background: #ccc;
+    color: #000;
+}
+
+.save-button {
+    background: #007bff;
+    color: white;
+}
+
+.section-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.move-button {
+    padding: 4px 8px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #6c757d;
+    color: white;
+}
+
+.move-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.curriculum-section {
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.add-section-button {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid #007bff;
+    background-color: white;
+    color: #007bff;
+    border-radius: 4px;
+}
+
+.sections {
+    margin-top: 20px;
+}
+
+.section {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: white;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.section-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-button,
+.content-button {
+    padding: 6px 10px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+}
+
+.add-item-button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid #007bff;
+    background-color: white;
+    color: #007bff;
+    border-radius: 4px;
+}
+
+.content-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.content-list {
+    margin-top: 10px;
+}
+
+.content-item {
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    font-size: 14px;
+}
+
+.content-item p {
+    margin: 0 0 10px;
+}
+
+.content-item ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.content-item li {
+    padding: 5px 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.add-question-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.add-question-button:hover {
+    background-color: #218838;
+}

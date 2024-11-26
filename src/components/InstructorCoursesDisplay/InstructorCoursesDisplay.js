@@ -6,9 +6,9 @@ const InstructorCoursesDisplay = () => {
     return (
         <div>
             <TextWithButtonCard
-                txt="Jump Into Course Creation"
-                btnTxt="Create your Course"
-                btnLink="/courses/create/1"
+                txt="Nhảy vào Tạo khóa học"
+                btnTxt="Tạo khóa học của bạn"
+                btnLink="/courses/create"
             />
         </div>
     );
