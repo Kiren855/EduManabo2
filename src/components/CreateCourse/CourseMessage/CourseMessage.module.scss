@@ -1,0 +1,50 @@
+.container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.editor {
+    border: 1px solid #2d2f31;
+    border-radius: 0px;
+    max-height: 200px;
+}
+
+.save-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    background: rgb(5, 5, 5);
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.save-button:hover {
+    background: rgb(62, 62, 62);
+}

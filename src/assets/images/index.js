@@ -59,6 +59,7 @@ const images = {
     groupUsersIcon: require('~/assets/images/group-users.png'),
     askIcon: require('~/assets/images/ask.png'),
     placeHolderImg: require('~/assets/images/placeholderImage.jpg'),
+    placeHolderImg1: require('~/assets/images/placeholder.png'),
 };
 
 export default images;

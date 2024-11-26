@@ -1,0 +1,144 @@
+.container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.description {
+    border-top: 1px solid gray;
+    padding-top: 30px;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.sub-title {
+    margin: 5px 0px;
+    color: rgb(106, 111, 115);
+    font-size: 1.4rem;
+    font-weight: normal;
+}
+
+.form-group {
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.count {
+    position: absolute;
+    top: 45px;
+    right: 12px;
+    font-weight: normal;
+    font-size: 1.4rem;
+}
+
+.label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.editor {
+    border: 1px solid #2d2f31;
+    border-radius: 0px;
+}
+
+.input,
+.select,
+.file-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #2d2f31;
+    border-radius: 0;
+    background-color: transparent;
+}
+
+.save-button {
+    background-color: rgb(4, 4, 4);
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid #2d2f31;
+    border-radius: 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.save-button:hover {
+    background-color: rgb(63, 63, 63);
+}
+
+.container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.image-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.image-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.course-image {
+    width: 300px;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.file-input {
+    display: none;
+}
+
+.upload-button,
+.change-button {
+    padding: 10px 15px;
+    font-size: 14px;
+    background: rgb(19, 18, 18);
+    color: #fff;
+    border: 1px solid #2d2f31;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.upload-button:hover,
+.change-button:hover {
+    background: rgb(68, 67, 67);
+}
+
+.note {
+    font-size: 12px;
+    color: #666;
+}

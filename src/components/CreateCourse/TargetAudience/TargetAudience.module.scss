@@ -1,0 +1,100 @@
+.container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+    position: relative;
+}
+
+.input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #2d2f31;
+    border-radius: 0px;
+    font-size: 14px;
+}
+
+.char-counter {
+    font-size: 12px;
+    color: #666;
+}
+
+.add-button,
+.remove-button {
+    padding: 5px 10px;
+    font-size: 14px;
+    background: transparent;
+    color: rgb(80, 34, 195);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.sub-title {
+    display: block;
+    margin: 20px 0px;
+    color: rgb(45, 47, 49);
+}
+
+.add-button:hover {
+    background: transparent;
+}
+
+.remove-button {
+    position: absolute;
+    right: -70px;
+    background: #dc3545;
+    visibility: hidden;
+}
+
+.remove-button:hover {
+    background: #c82333;
+}
+
+.save-button {
+    padding: 10px 20px;
+    font-size: 1.4rem;
+    background: black;
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.save-button:hover {
+    background: rgb(57, 56, 56);
+}
+
+.text-hd {
+    display: block;
+    border-top: 1px solid gray;
+    padding-top: 20px;
+    color: rgb(45, 47, 49);
+    font-size: 1.6rem;
+    padding-bottom: 20px;
+}

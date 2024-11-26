@@ -1,0 +1,95 @@
+.container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.info-box {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #636262;
+    border-radius: 0px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.icon-container {
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+.info-icon {
+    display: inline-block;
+    font-size: 24px;
+    color: #007bff;
+}
+
+.info-content {
+    flex: 1;
+}
+
+.cancel-button {
+    background-color: rgb(10, 10, 10);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 0px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-button:hover {
+    background-color: rgb(88, 72, 72);
+}
+
+.instruction {
+    background-color: #fff;
+    border: 1px solid #636262;
+    border-radius: 0px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.new-feature {
+    background-color: transparent;
+    border: 1px solid #c3e6cb;
+    border-radius: 0px;
+    padding: 15px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.label {
+    background-color: rgb(10, 10, 10);
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 12px;
+    position: absolute;
+    top: -10px;
+    left: 15px;
+}
