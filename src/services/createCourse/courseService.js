@@ -1,4 +1,3 @@
-import { date } from 'yup';
 import api from '../api'; // Import instance axios
 import env from '~/env'; // Import biến môi trường
 
@@ -63,7 +62,6 @@ export const getCourseMessages = async (courseID) => {
 // Cập nhật tin nhắn chào mừng và chúc mừng
 export const updateCourseMessages = async (courseID, messages) => {
     try {
-        console.log(messages)
         const response = await api.put(`${env.COURSE_SERVICE}/courses/notify/${courseID}`, messages);
         return response.data;
     } catch (error) {
@@ -76,11 +74,9 @@ export const updateCourseMessages = async (courseID, messages) => {
 export const getCourseOverview = async (courseID) => {
     try {
         const response = await api.get(`${env.COURSE_SERVICE}/courses/overview/${courseID}`);
-        if (response.data.code === 1000) {
-            return response.data.result;
-        } else {
-            throw new Error(response.data.message || 'Error fetching course overview');
-        }
+
+        return response.data.result;
+
     } catch (error) {
         console.error('Error fetching course overview:', error);
         throw error;
@@ -90,18 +86,101 @@ export const getCourseOverview = async (courseID) => {
 // Update course overview
 export const updateCourseOverview = async (courseID, courseData) => {
     try {
-        const response = await api.put(`${env.COURSE_SERVICE}/courses/overview/${courseID}`, courseData, {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
-        if (response.data.code === 1000) {
-            return response.data.message; // Return success message
-        } else {
-            throw new Error(response.data.message || 'Error updating course overview');
-        }
+        await api.put(`${env.COURSE_SERVICE}/courses/overview/${courseID}`, courseData);
     } catch (error) {
-        console.error('Error updating course overview:', error);
+        throw error;
+    }
+};
+
+// Hàm GET lấy dữ liệu mục tiêu và yêu cầu
+export const getTargetRequirements = async (courseID) => {
+    try {
+        const response = await api.get(`${env.COURSE_SERVICE}/courses/target-require/${courseID}`);
+
+        return response.data.result;  // Trả về danh sách targetAudiences và requirements
+
+    } catch (error) {
+        console.error('Lỗi khi gọi API GET:', error);
+        throw error; // Thông báo lỗi để xử lý ở nơi gọi
+    }
+};
+
+// Hàm PUT để cập nhật dữ liệu mục tiêu và yêu cầu
+export const updateTargetRequirements = async (courseID, data) => {
+    try {
+        const response = await api.put(`${env.COURSE_SERVICE}/courses/target-require/${courseID}`, data);
+
+        return response.data.message;  // Trả về thông báo thành công
+
+    } catch (error) {
+        console.error('Lỗi khi gọi API PUT:', error);
+        throw error;
+    }
+};
+
+// Hàm PUT để cập nhật dữ liệu mục tiêu và yêu cầu
+export const deleteCourse = async (courseID) => {
+    try {
+        await api.delete(`${env.COURSE_SERVICE}/courses/${courseID}`);
+
+    } catch (error) {
+        console.error('Lỗi khi gọi API PUT:', error);
+        throw error;
+    }
+};
+
+// Hàm POST để xuất bản một khóa học 
+export const submitCourse = async (courseID) => {
+    try {
+        await api.post(`${env.COURSE_SERVICE}/courses/submit/${courseID}`);
+    } catch (error) {
+        console.error('Lỗi khi gọi API POST:', error);
+        throw error;
+    }
+};
+
+/*
+ ---------------------------ADMIN---------------------------
+*/
+
+// Hàm GET để lấy danh sách khóa học được submit cho admin
+export const getSubmitCourses = async () => {
+    try {
+        const response = await api.get(`${env.COURSE_SERVICE}/courses/admin/course-submited`);
+        return response;
+    } catch (error) {
+        console.error('Lỗi khi gọi API POST:', error);
+        throw error;
+    }
+};
+
+// Hàm POST để chấp nhận một course dành cho admin
+export const approveCourse = async (courseID) => {
+    try {
+        await api.post(`${env.COURSE_SERVICE}/courses/admin/approve/${courseID}`);
+    } catch (error) {
+        console.error('Lỗi khi gọi API POST:', error);
+        throw error;
+    }
+};
+
+// Hàm POST để từ chối một course dành cho admin
+export const rejectCourse = async (courseID, payload) => {
+    try {
+        await api.post(`${env.COURSE_SERVICE}/courses/admin/reject/${courseID}`, payload);
+    } catch (error) {
+        console.error('Lỗi khi gọi API POST:', error);
+        throw error;
+    }
+};
+
+// Hàm POST để từ chối một course dành cho admin
+export const getPreview = async (courseID) => {
+    try {
+        const responce = await api.get(`${env.COURSE_SERVICE}/courses/preview/${courseID}`);
+        return responce.data.result;
+    } catch (error) {
+        console.error('Lỗi khi lay preview:', error);
         throw error;
     }
 };

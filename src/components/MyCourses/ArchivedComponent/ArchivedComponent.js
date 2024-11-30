@@ -23,20 +23,7 @@ const ArchivedComponent = () => {
         </div>,
     ];
     return (
-        <div className={css.outerDiv}>
-            <div className={css.bdy}>
-                {courseDataWithOptions.map((item) => {
-                    return (
-                        <CourseCardWithOptions
-                            key={item.id}
-                            data={item}
-                            isOptions={true}
-                            options={optionsComps}
-                        />
-                    );
-                })}
-            </div>
-        </div>
+        <></>
     );
 };
 

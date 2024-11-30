@@ -1,11 +1,16 @@
 import classNames from "classnames/bind";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./LearningScreen.module.scss";
 
 import VideoPlayer from "~/components/VideoPlayer";
+import Spinner from "~/utils/Spinner";
+import ToastMessage from "~/utils/ToastMessage";
+import { getDetailCourseOfLearningService } from "~/services/learning/learningService";
+import { useParams } from "react-router-dom";
 import LessonSidebar from "~/components/LessonSidebar";
 import CourseVideoNavbar from "~/components/CourseVideoNavbar";
 import Footer from "~/layouts/components/Footer";
+import { getVideoLessonByTypeId, getExamLessonById, getContentArticleLesson } from "~/services/createCourse/sectionsService";
 import CourseViewTabComponent from "~/components/CourseViewTabComponents/CourseViewTabComponent";
 import QuizComponent from "~/components/Cards/QuizComponent";
 
@@ -63,25 +68,58 @@ const questions = [
 ];
 
 function LearningScreen() {
-    // http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4
-    // https://www.youtube.com/embed/ISb5jy5-N-I?si=t_anh6-BfrNVc1JB
-    const lesson = {
-        _id: "lesson123",
-        Name: "Introduction to Web Development",
-        Type: "video",
-        Contents: {
-            _id: "content123",
-            Video_url: "https://www.youtube.com/embed/ISb5jy5-N-I?si=t_anh6-BfrNVc1JB", // URL YouTube hoặc URL S3
-            Duration: 10, // Đơn vị phút
-            Thumbnail_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqQko0s7FTvRgN26lTufTX2E-SfPu7tC2AsA&s",
-            Content_text: "In this lesson, we will explore the basics of web development and set up your environment."
-        },
-        Comments: []
+    const [toast, setToast] = useState(null); // Quản lý thông báo
+    const [isLoading, setIsLoading] = useState(true);
+    const [course, setCourses] = useState([]);
+    const { courseId } = useParams();
+    const [selectedLesson, setSelectedLesson] = useState(null);
+    const [lessonData, setLessonData] = useState(null);
+
+    // Hàm xử lý khi lesson được chọn
+    const handleSelectLesson = async (lesson) => {
+        setSelectedLesson(lesson); // Lưu lại lesson đã chọn
+
+        try {
+            // Kiểm tra type của lesson và gọi API tương ứng
+            if (lesson.type === 'VIDEO') {
+                // Gọi API để lấy dữ liệu video
+                const videoData = await getVideoLessonByTypeId(lesson.type_id);
+                setLessonData(videoData); // Cập nhật lessonData với dữ liệu video
+            } else if (lesson.type === 'EXAM') {
+                // Gọi API để lấy dữ liệu exam
+                const examData = await getExamLessonById(lesson.type_id);
+                setLessonData(examData); // Cập nhật lessonData với dữ liệu exam
+            } else if (lesson.type === 'ARTICLE') {
+                // Gọi API để lấy dữ liệu article
+                const articleData = await getContentArticleLesson(lesson.type_id);
+                setLessonData(articleData); // Cập nhật lessonData với dữ liệu article
+            }
+        } catch (error) {
+            console.error('Lỗi khi lấy dữ liệu lesson:', error);
+        }
     };
 
-    const data = {
-        title: "A Chill Day Playlist - CNG03",
+    const fetchData = async () => {
+        try {
+            // Lấy dữ liệu wishList và cart đồng thời
+            const courseData = await getDetailCourseOfLearningService(courseId);
+            setCourses(courseData.result);
+        } catch (err) {
+            console.error(err); // Log lỗi nếu có
+            setToast({ type: 'error', message: `${err.response.data.message}` });
+        } finally {
+            setIsLoading(false);
+        }
     };
+
+    useEffect(() => {
+
+        fetchData(); // Gọi hàm lấy dữ liệu khi component mount
+        if (course && course.sections && course.sections.length > 0) {
+            const firstLesson = course.sections[0].lessons[0]; // Chọn lesson đầu tiên trong sections
+            setSelectedLesson(firstLesson);
+        }
+    }, [courseId]);
 
     const [isExpandedView, setIsExpandedView] = useState(true);
 
@@ -95,19 +133,50 @@ function LearningScreen() {
         setCurrentLessonId(lessonId);
     };
 
-    return (
-        <div className={cx('video-learning-screen')}>
-            <CourseVideoNavbar data={data} />
-            <div className={cx('main-content')}>
-                {/* <VideoPlayer onToggleExpandedView={handleToggleExpandedView} lesson={lesson} /> */}
-                <QuizComponent questions={questions} />
-                <CourseViewTabComponent />
-                <Footer />
+    if (isLoading) {
+        return (
+            <div className={cx('df')}>
+                <Spinner message="Nhâm nhi cà phê trong khi chúng tôi thực hiện yêu cầu của bạn..." />
             </div>
-            {isExpandedView && (
-                <LessonSidebar currentLessonId={currentLessonId} onChangeLesson={changeLesson} />
+        );
+    }
+
+    console.log(course)
+    console.log('lessson selected', selectedLesson)
+
+    return (
+        <>
+            {/* Hiển thị ToastMessage */}
+            {toast && (
+                <ToastMessage
+                    type={toast.type}
+                    message={toast.message}
+                    onClose={() => setToast(null)}
+                />
             )}
-        </div>
+            <div className={cx('video-learning-screen')}>
+                <CourseVideoNavbar data={course.title} />
+                <div className={cx('main-content')}>
+                    {/* VideoPlayer, QuizComponent, hoặc ArticleComponent */}
+                    {lessonData && selectedLesson.type === 'VIDEO' && (
+                        <VideoPlayer onToggleExpandedView={handleToggleExpandedView} lesson={lessonData} />
+                    )}
+                    {lessonData && selectedLesson.type === 'EXAM' && (
+                        <QuizComponent exam={lessonData} />
+                    )}
+                    {/* {lessonData && lessonData.type === 'ARTICLE' && (
+                        <ArticleComponent article={lessonData} />
+                    )} */}
+                    {/* <VideoPlayer onToggleExpandedView={handleToggleExpandedView} lesson={lesson} />
+                    <QuizComponent questions={questions} /> */}
+                    <CourseViewTabComponent />
+                    <Footer />
+                </div>
+                {isExpandedView && (
+                    <LessonSidebar onLessonSelect={handleSelectLesson} data={course.sections} currentLessonId={currentLessonId} onChangeLesson={changeLesson} />
+                )}
+            </div>
+        </>
     );
 }
 

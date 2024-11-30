@@ -1,43 +1,42 @@
 import classNames from "classnames/bind";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from "./RecommendedVideos.module.scss";
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { getRecommend } from "~/services/recommend/recommend";
 import {
     faStar,
 } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles)
 
-const courses = [
-    { id: 1, image: 'https://antimatter.vn/wp-content/uploads/2022/10/hinh-anh-gai-xinh-de-thuong.jpg', title: 'Khóa học 1', to: '/', count: 0, name: 'AWS Cloud for beginner (Vietnamese)', author: "CNG", rate: 4, price: "1.234.567", isBestSeller: true },
-    { id: 2, image: 'https://media.viez.vn/prod/2022/9/23/large_lo_lem_9_5863_a3bbef0412.jpeg', title: 'Khóa học 2', to: '/', count: 345, name: 'AWS Cloud for beginner (Vietnamese)', author: "CNG", rate: 2, price: "1.234.567", isBestSeller: true },
-    { id: 3, image: 'https://benhvienthammydonga.vn/wp-content/uploads/2022/06/anh-mat-va-nu-cuoi-nhu-hoa-quyen.jpg', title: 'Khóa học 3', to: '/', count: 345, name: 'AWS Cloud for beginner (Vietnamese)', author: "CNG", rate: 1, price: "1.234.567", isBestSeller: false },
-    { id: 4, image: 'https://icdn.24h.com.vn/upload/2-2023/images/2023-06-06/kim5_1-1686027959-673-width740height480.jpg', title: 'Khóa học 4', to: '/', count: 345, name: 'AWS Cloud for beginner (Vietnamese)', author: "CNG", rate: 4, price: "1.234.567", isBestSeller: false },
-    { id: 5, image: 'https://via.placeholder.com/150', title: 'Khóa học 5', to: '/', count: 345, name: 'AWS Cloud for beginner (Vietnamese)', author: "CNG", rate: 3.7, price: "1.234.567", isBestSeller: false },
-    { id: 6, image: 'https://via.placeholder.com/150', title: 'Khóa học 6', to: '/', count: 345, name: 'AWS Cloud for beginner (Vietnamese)', author: "CNG", rate: 4, price: "1.234.567", isBestSeller: false },
-    { id: 7, image: 'https://via.placeholder.com/150', title: 'Khóa học 7', to: '/', count: 345, name: 'AWS Cloud for beginner (Vietnamese)', author: "CNG", rate: 4, price: "1.234.567", isBestSeller: true },
-    { id: 8, image: 'https://via.placeholder.com/150', title: 'Khóa học 8', to: '/', count: 345, name: 'AWS Cloud for beginner (Vietnamese)', author: "CNG", rate: 4, price: "1.234.567", isBestSeller: false },
-    { id: 9, image: 'https://via.placeholder.com/150', title: 'Khóa học 9', to: '/', count: 345, name: 'AWS Cloud for beginner (Vietnamese)', author: "CNG", rate: 4, price: "1.234.567", isBestSeller: true },
-    { id: 10, image: 'https://via.placeholder.com/150', title: 'Khóa học 10', to: '/', count: 345, name: 'AWS Cloud for beginner (Vietnamese)', author: "CNG", rate: 4, price: "1.234.567", isBestSeller: false },
-    { id: 11, image: 'https://via.placeholder.com/150', title: 'Khóa học 11', to: '/', count: 345, name: 'AWS Cloud for beginner (Vietnamese)', author: "CNG", rate: 4, price: "1.234.567", isBestSeller: true },
-    { id: 12, image: 'https://via.placeholder.com/150', title: 'Khóa học 12', to: '/', count: 345, name: 'AWS Cloud for beginner (Vietnamese)', author: "CNG", rate: 4, price: "1.234.567", isBestSeller: true },
-    { id: 13, image: 'https://via.placeholder.com/150', title: 'Khóa học 13', to: '/', count: 345, name: 'AWS Cloud for beginner (Vietnamese)', author: "CNG", rate: 4, price: "1.234.567", isBestSeller: false },
-    { id: 14, image: 'https://via.placeholder.com/150', title: 'Khóa học 14', to: '/', count: 345, name: 'AWS Cloud for beginner (Vietnamese)', author: "CNG", rate: 4, price: "1.234.567", isBestSeller: false },
-    { id: 15, image: 'https://via.placeholder.com/150', title: 'Khóa học 15', to: '/', count: 345, name: 'AWS Cloud for beginner (Vietnamese)', author: "CNG", rate: 4, price: "1.234.567", isBestSeller: false },
-];
 
 
-function RecommendedVideos({ title, type }) {
 
-    const [currentIndex, setCurrentIndex] = useState(0);
+function RecommendedVideos({ title, type, setIsLoading, setToast }) {
+
+    const [currentIndex, setCurrentIndex] = useState(0); // Chỉ số trang hiện tại
     const itemsPerPage = 5; // Số lượng khóa học hiển thị trên mỗi slide
+    const [courses, setCourses] = useState([]); // Danh sách tất cả các khóa học
+    const [displayedCourses, setDisplayedCourses] = useState([]); // Danh sách các khóa học hiển thị
     const navigate = useNavigate();
 
-    // Xác định phần tử bắt đầu và phần tử kết thúc cho mỗi slide
-    const startIndex = currentIndex * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const displayedCourses = courses.slice(startIndex, endIndex);
+    // Hàm lấy dữ liệu từ API và cập nhật state
+    const fetchData = async () => {
+        try {
+            const coursesData = await getRecommend(); // Giả sử getRecommend là hàm lấy dữ liệu khóa học
+            setCourses(coursesData); // Lưu tất cả khóa học vào state courses
+        } catch (err) {
+            console.error('Lỗi khi lấy khóa học:', err);
+        }
+    };
+
+    // Cập nhật displayedCourses khi currentIndex hoặc courses thay đổi
+    useEffect(() => {
+        const startIndex = currentIndex * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        setDisplayedCourses(courses.slice(startIndex, endIndex)); // Cập nhật danh sách hiển thị khóa học
+    }, [currentIndex, courses]); // Chạy lại khi currentIndex hoặc courses thay đổi
 
     // Hàm chuyển sang slide tiếp theo
     const nextSlide = () => {
@@ -45,6 +44,11 @@ function RecommendedVideos({ title, type }) {
             setCurrentIndex(prevIndex => prevIndex + 1);
         }
     };
+
+    // Gọi hàm fetchData khi component mount
+    useEffect(() => {
+        fetchData();
+    }, []);
 
     // Hàm chuyển về slide trước
     const prevSlide = () => {
@@ -55,6 +59,13 @@ function RecommendedVideos({ title, type }) {
 
     const handleCourseClick = (courseId) => {
         navigate(`/course/${courseId}`);
+    };
+
+    const formatCurrency = (amount) => {
+        return new Intl.NumberFormat('vi-VN', {
+            style: 'currency',
+            currency: 'VND', // Hoặc thay 'VND' bằng đơn vị tiền tệ khác nếu cần
+        }).format(amount);
     };
 
     return (
@@ -68,7 +79,7 @@ function RecommendedVideos({ title, type }) {
                         <div
                             key={course.id}
                             className={cx('carousel-item')}
-                            onClick={() => handleCourseClick(course.id)}
+                            onClick={() => handleCourseClick(course.courseId)}
                         >
                             {course.isBestSeller && (
                                 <div className={cx('best-seller')}>Best Seller</div>
@@ -76,17 +87,17 @@ function RecommendedVideos({ title, type }) {
 
                             <img src={course.image} alt={course.title} />
                             <div className={cx('course-title')}>
-                                <h3>{course.name}</h3>
+                                <h3>{course.courseName}</h3>
                                 <div className={cx('course-author')}>
-                                    <span>{course.author}</span>
+                                    <span>{course.instructorName}</span>
                                 </div>
                                 <div className={cx('course-rate')}>
                                     <span>
-                                        {course.rate}<span className={cx('icon-star')}><FontAwesomeIcon icon={faStar} /> </span>({course.count})
+                                        {course.rating}<span className={cx('icon-star')}><FontAwesomeIcon icon={faStar} /> </span>
                                     </span>
                                 </div>
                                 <div className={cx('course-price')}>
-                                    <strong>{course.price} VND</strong>
+                                    <strong>{`Giá ${formatCurrency(course.price)}`}</strong>
                                 </div>
                             </div>
                         </div>

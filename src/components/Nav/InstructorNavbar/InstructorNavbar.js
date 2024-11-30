@@ -1,10 +1,30 @@
 import { Link } from "react-router-dom";
-
+import { getProfile } from "~/services/auth/userService";
 import css from "./InstructorNavbar.module.scss";
 
 import images from "~/assets/images";
+import { useState, useEffect } from "react";
 
 const InstructorNavbar = () => {
+    const [avatar, setAvatar] = useState('');
+    const [email, setEmail] = useState('');
+    const [fullName, setFullName] = useState('');
+
+    useEffect(() => {
+        const fetchPrice = async () => {
+            try {
+                const { avatar, email, firstName, lastName, } = await getProfile();
+                setAvatar(avatar);
+                setEmail(email);
+                setFullName(`${firstName} ${lastName}`)
+            } catch (error) {
+                console.log(error.response.data.message)
+            }
+        };
+
+        fetchPrice();
+    }, []);
+
     return (
         <div className={css.navbar}>
             <div className={css.right}>
@@ -19,21 +39,21 @@ const InstructorNavbar = () => {
                     />
                 </div>
                 <div className={css.profile}>
-                    <img alt="HTT" src={'https://astral.vn/wp-content/uploads/2023/05/anh-gai-xinh-lo-clip-169.jpg'} className={css.profileIcon} />
+                    <img alt="HTT" src={avatar} className={css.profileIcon} />
                     <div className={css.menuBox}>
                         <div className={css.innerMenuBox}>
                             <div className={css.prflDiv}>
-                                <Link to="/user/profile/settings/basic" className={css.user}>
+                                <Link to="/user/profile/settings" className={css.user}>
                                     <div className={css.leftUserDiv}>
                                         <img
-                                            src={'https://astral.vn/wp-content/uploads/2023/05/anh-gai-xinh-lo-clip-169.jpg'}
+                                            src={avatar}
                                             alt="user profile"
                                             className={css.userProfileImg}
                                         />
                                     </div>
                                     <div className={css.rightUserDiv}>
-                                        <div className={css.uname}>CNG03</div>
-                                        <div className={css.email}>buivancng03@gmail.com</div>
+                                        <div className={css.uname}>{fullName}</div>
+                                        <div className={css.email}>{email}</div>
                                     </div>
                                 </Link>
                             </div>

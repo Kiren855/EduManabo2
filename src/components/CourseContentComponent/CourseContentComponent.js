@@ -9,6 +9,7 @@ import css from "./CourseContentComponent.module.scss";
 
 const CourseContentComponent = (props) => {
     const { title = "", data = [], playerWidthSetter = () => { } } = props;
+    const { selectLesson } = props;
     const [toggleBox, setToggleBox] = useState({});
     const [toggleDrpDwn, setToggleDrpDwn] = useState({});
     const [checkedItems, setCheckedItems] = useState({});
@@ -26,6 +27,10 @@ const CourseContentComponent = (props) => {
             return updated;
         });
     }, []);
+
+    const handleLessonClick = (lesson) => {
+        selectLesson(lesson);  // Gửi lesson về component cha khi người dùng click
+    };
 
     return (
         <div className={css.outterDiv}>
@@ -55,12 +60,12 @@ const CourseContentComponent = (props) => {
                                 >
                                     <div className={css.tabTitleLeft}>
                                         <div className={css.tabTtl}>
-                                            {`Section ${id + 1}: ${item.ttl}`}
+                                            {`Phần ${id + 1}: ${item.name}`}
                                         </div>
                                         <div className={css.tabDesc}>
-                                            <span>10/10</span>
+                                            <span>{`0/${item.lessons.length}`}</span>
                                             <span></span>
-                                            <span>40 min</span>
+                                            <span>{Math.floor(item.duration / 60)} phút {item.duration % 60} giây</span>
                                         </div>
                                     </div>
                                     <div className={css.tabTitleRight}>
@@ -76,11 +81,12 @@ const CourseContentComponent = (props) => {
                                 </div>
                                 {toggleBox[id] ? (
                                     <Link to="" className={css.tabBdy}>
-                                        {item.list?.map((subItem) => {
+                                        {item.lessons?.map((subItem) => {
                                             return (
                                                 <div
                                                     className={css.descBdy}
                                                     key={`subItem-${subItem.id}`}
+                                                    onClick={() => handleLessonClick(subItem)}
                                                 >
                                                     <div className={css.descBdyLeft}>
                                                         <CustomCheckboxUtil
@@ -98,12 +104,16 @@ const CourseContentComponent = (props) => {
 
                                                     </div>
                                                     <div className={css.descBdyRight}>
-                                                        <div className={css.sbTtl}>{subItem.ttl}</div>
+                                                        <div className={css.sbTtl}>{subItem.name}</div>
                                                         <div className={css.sbBox}>
                                                             <span className={css.subDur}>
                                                                 <img alt="Huynh Thanh Thao :<3" src={images.playIcon} className={css.plyIcon} />
                                                                 <span className={css.subDurTxt}>
-                                                                    {subItem.dur}
+                                                                    {subItem.duration && (
+                                                                        <>
+                                                                            {Math.floor(subItem.duration / 60)} phút {subItem.duration % 60} giây
+                                                                        </>
+                                                                    )}
                                                                 </span>
                                                             </span>
                                                             {subItem?.resources?.length > 0 ? (

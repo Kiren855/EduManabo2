@@ -75,7 +75,7 @@ const CreateCourse = () => {
             setToast({ type: 'success', message: 'Khóa học được tạo thành công! Đang chuyển hướng...' });
 
             // Chuyển hướng đến trang chỉnh sửa khóa học
-            const courseId = response.result; // Lấy `id` từ `result`
+            const courseId = response.result.id; // Lấy `id` từ `result`
             navigate(`/courses/edit/${courseId}`);
 
         } catch (error) {

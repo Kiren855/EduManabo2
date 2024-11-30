@@ -21,9 +21,9 @@ function PopUp({ tileLink, to, type, Content }) {
     //             let response;
 
     //             // Gọi API dựa trên 'type'
-    //             if (type === 'category') {
+    //             if (type === 'wishList') {
     //                 response = await fetch('/api/category-data');
-    //             } else if (type === 'product') {
+    //             } else if (type === 'shopping') {
     //                 response = await fetch('/api/product-data');
     //             } else if (type === 'user') {
     //                 response = await fetch('/api/user-data');

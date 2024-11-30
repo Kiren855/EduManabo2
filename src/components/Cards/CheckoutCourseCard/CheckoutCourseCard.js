@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './CheckoutCourseCard.module.scss';
+import { orderPayment } from '~/services/payment/payment';
 
 const cx = classNames.bind(styles);
 
-const CheckoutCourseCard = ({ originalPrice, discountPrice, }) => {
+const CheckoutCourseCard = ({ price, setIsLoading, setToast }) => {
     const [coupon, setCoupon] = useState('');
     const [appliedCoupon, setAppliedCoupon] = useState(null);
 
@@ -19,16 +20,25 @@ const CheckoutCourseCard = ({ originalPrice, discountPrice, }) => {
         setAppliedCoupon(null);
     };
 
+    const payment = async () => {
+        setIsLoading(true)
+        try {
+            const response = await orderPayment(); // Gọi API
+            window.location.href = response.data.payload.payment.vnp_url;
+        } catch (error) {
+            console.error('Lỗi khi thanh toan:', error);
+            setToast({ type: 'error', message: `${error.message}` });
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
     return (
         <div className={cx('checkout')}>
             <div className={cx('total-section')}>
                 <p className={cx('total-label')}>Tổng:</p>
-                <p className={cx('total-price')}>đ {discountPrice.toLocaleString()}</p>
-                <p className={cx('original-price')}>đ {originalPrice.toLocaleString()}</p>
-                <p className={cx('discount-percent')}>
-                    Giảm {Math.round((1 - discountPrice / originalPrice) * 100)}%
-                </p>
-                <button className={cx('checkout-button')}>Thanh toán</button>
+                <p className={cx('total-price')}>đ {price.toLocaleString()}</p>
+                <button onClick={payment} className={cx('checkout-button')}>Thanh toán</button>
             </div>
 
             <div className={cx('coupon-section')}>

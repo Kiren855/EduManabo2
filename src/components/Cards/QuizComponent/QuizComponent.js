@@ -4,7 +4,7 @@ import styles from "./QuizComponent.module.scss";
 
 const cx = classNames.bind(styles);
 
-const QuizComponent = ({ questions }) => {
+const QuizComponent = ({ exam }) => {
     const [selectedAnswers, setSelectedAnswers] = useState({});
 
     const handleAnswerChange = (questionId, answerIndex, isMultiple) => {
@@ -30,7 +30,7 @@ const QuizComponent = ({ questions }) => {
 
     return (
         <div className={cx('quiz-container')}>
-            {questions.map((question, index) => (
+            {exam.map((question, index) => (
                 <div key={index} className={cx('question-container')}>
                     <h3 className={cx('question-text')}>{index + 1}. {question.text}</h3>
                     <div className={cx('answers-container', { 'multiple-answers': question.isMultiple, 'single-answer': !question.isMultiple })}>

@@ -12,11 +12,9 @@ import images from "~/assets/images";
 
 const cx = classNames.bind(styles)
 
-const CourseVideoNavbar = (props) => {
+const CourseVideoNavbar = ({ data }) => {
     const [leaveRatingModal, setLeaveRatingModal] = useState(false);
     const [showShareCourseDialog, setShowShareCourseDialog] = useState(false);
-    const { data = {} } = props;
-    const { title = "" } = data;
 
     const shareCourseDialogHandler = () => {
         setShowShareCourseDialog((p) => !p);
@@ -32,21 +30,21 @@ const CourseVideoNavbar = (props) => {
                     </Link>
                 </div>
                 <hr className={cx('vhr')} />
-                <div className={cx('ttl')}>{title}</div>
+                <div className={cx('ttl')}>{data}</div>
             </div>
             <div className={cx('right')}>
                 <div className={cx('item')}>
                     <img src={images.starIcon} alt="star" className={cx('icon')} />
                     <span className={cx('txt')} onClick={() => setLeaveRatingModal(true)}>
-                        Leave a rating
+                        Để lại đánh giá
                     </span>
                 </div>
                 <div className={cx('item')}>
-                    <span className={cx('txt')}>Your Progress</span>
+                    <span className={cx('txt')}>Tiến trình của bạn</span>
                     <CircularProgress progress={22} size={28} strokeWidth={2} color="#5022c3" />
                 </div>
                 <Button1
-                    txt="Share"
+                    txt="Chia sẻ"
                     color="var(--white)"
                     img={images.shareIcon}
                     imgDir="right"
@@ -63,7 +61,7 @@ const CourseVideoNavbar = (props) => {
             </div>
             {showShareCourseDialog ? (
                 <ShareCourseCard
-                    ttl="Share this course"
+                    ttl="Chia sẻ khóa học này"
                     txt=""
                     btnTxt="Copy"
                     btnClick={shareCourseDialogHandler}

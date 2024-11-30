@@ -10,7 +10,7 @@ import styles from './CoursePlanPage.module.scss';
 const cx = classNames.bind(styles);
 
 const CoursePlanPage = () => {
-    const [selectedSection, setSelectedSection] = useState('target');
+    const [selectedSection, setSelectedSection] = useState('planLearn');
 
     return (
         <>

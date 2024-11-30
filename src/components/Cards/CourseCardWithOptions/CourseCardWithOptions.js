@@ -10,13 +10,13 @@ import images from "~/assets/images";
 const CourseCardWithOptions = (props) => {
     const { isOptions = false, options, data } = props;
     const {
-        path = "",
-        img = "",
+        path = `/course/view/`,
+        image = "",
         id = 0,
-        ttl = "",
-        author = "",
-        ratings = 0,
-        courseCoveredPercent = 0,
+        courseName = "",
+        instructorName = "",
+        completionRate = 0,
+        courseId = "",
     } = data;
     const [menuBox, setMenuBox] = useState(false);
     const [modal, setModal] = useState(false);
@@ -35,6 +35,7 @@ const CourseCardWithOptions = (props) => {
                 }
             });
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     let stars = [];
@@ -57,7 +58,7 @@ const CourseCardWithOptions = (props) => {
                 <path
                     fill="url(#grad)"
                     d="M20.388,10.918L32,12.118l-8.735,7.749L25.914,31.4l-9.893-6.088L6.127,31.4l2.695-11.533L0,12.118
-l11.547-1.2L16.026,0.6L20.388,10.918z"
+    l11.547-1.2L16.026,0.6L20.388,10.918z"
                     stroke-width="3"
                     stroke="gold"
                 />
@@ -81,7 +82,7 @@ l11.547-1.2L16.026,0.6L20.388,10.918z"
     return (
         <>
             {modal ? <PlanModalUtil setModal={setModal} content={content} /> : null}
-            <Link to={path} className={css.outerDiv}>
+            <Link to={`${path}${courseId}`} className={css.outerDiv}>
                 {isOptions ? (
                     <div
                         className={css.optionsBox}
@@ -109,17 +110,17 @@ l11.547-1.2L16.026,0.6L20.388,10.918z"
                     </div>
                 ) : null}
                 <div className={css.imgBox}>
-                    <img src={img} alt="course image" className={css.img} />
+                    <img alt="HTT" src={image} className={css.img} />
                     <div className={css.hovImgBox}>
                         <img src={images.playIcon} alt="play icon" className={css.hovImg} />
                     </div>
                 </div>
                 <div className={css.bdy}>
-                    <div className={css.ttl}>{ttl}</div>
-                    <div className={css.author}>{author}</div>
-                    <progress value={76} max="100" className={css.progressBar} />
+                    <div className={css.ttl}>{courseName}</div>
+                    <div className={css.author}>{instructorName}</div>
+                    <progress value={completionRate} max="100" className={css.progressBar} />
                     <div className={css.footerBox}>
-                        <span className={css.txt}>{courseCoveredPercent}% complete</span>
+                        <span className={css.txt}>{completionRate}% complete</span>
                         <span className={css.starsRatings}>
                             <span></span>
                             <span onClick={modalHandler}>Leave a rating</span>

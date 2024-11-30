@@ -26,17 +26,17 @@ const SearchTabComponent = () => {
                         <></>
                     ) : (
                         <div className={css.noResult}>
-                            <div className={css.txtB}>Sorry, no results for "{state}"</div>
+                            <div className={css.txtB}>Xin lỗi, không có kết quả nào cho "{state}"</div>
                             <div className={css.txt}>
-                                Your search did not match any captions, lectures or resources
+                                Tìm kiếm của bạn không khớp với bất kỳ chú thích, bài giảng hoặc tài nguyên nào
                             </div>
                         </div>
                     )
                 ) : (
                     <div className={css.noResult}>
-                        <div className={css.txtB}>Start a new search</div>
+                        <div className={css.txtB}>Bắt đầu tìm kiếm mới</div>
                         <div className={css.txt}>
-                            To find captions, lectures or resources
+                            Để tìm phụ đề, bài giảng hoặc tài nguyên
                         </div>
                     </div>
                 )}
