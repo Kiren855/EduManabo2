@@ -33,9 +33,8 @@ const VerticalCourseDraftCard = (props) => {
                 const imageSrc = course.image || images.placeHolderImg;
                 const courseName = course.title;
                 const isDraft = course.isDraft;
-                const courseType = isDraft === null || isDraft === false ? "Bản nháp" : "";
-                const courseVisible = isDraft === true ? "Công khai" : "Riêng tư";
-                const courseFillP = isDraft === true ? 1 : 0.1;
+                const courseType = isDraft === true ? "Bản nháp" : "";
+                const courseVisible = isDraft === true ? "Riêng tư" : "Công khai";
 
                 return (
                     <Link to={link} className={css.outerDiv} key={course.id}>
@@ -46,7 +45,7 @@ const VerticalCourseDraftCard = (props) => {
                             <div className={css.hoveredBox}>Chỉnh sửa / Quản lý khóa học</div>
                             <div className={css.rLeftBox}>
                                 <div className={css.txt}>{courseName}</div>
-                                {isDraft === null || isDraft === false ? (
+                                {isDraft === null || isDraft === true ? (
                                     <div className={css.txt}>
                                         {courseType} <span className={css.lightTxt}>{courseVisible}</span>
                                     </div>
@@ -56,7 +55,6 @@ const VerticalCourseDraftCard = (props) => {
                             </div>
                             <div className={css.rrightBox}>
                                 <span className={css.txt}>Kết thúc khóa học của bạn</span>
-                                <progress value={courseFillP} max={1} className={css.progressBar} />
                             </div>
                         </div>
                     </Link>

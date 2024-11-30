@@ -8,6 +8,14 @@
     margin: 0 auto;
 }
 
+.df {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .position-container {
     display: flex;
     justify-content: space-between;

@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCartShopping,
@@ -7,6 +8,8 @@ import {
 import { faHeart, faBell } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom';
 import 'tippy.js/dist/tippy.css';
+import { getAccessToken, getRefreshToken } from '~/services/auth/authHelper';
+import { getProfile } from '~/services/auth/userService';
 
 import config from '~/config';
 import Button from '~/components/Button';
@@ -25,7 +28,27 @@ const cx = classNames.bind(styles);
 
 
 function Header() {
-    const currentUser = true;
+    const accessToken = getAccessToken();
+    const refreshToken = getRefreshToken();
+    const currentUser = accessToken && refreshToken ? true : false;
+
+    const [avatarUrl, setAvatarUrl] = useState('');
+
+    useEffect(() => {
+        const fetchPrice = async () => {
+            try {
+                const { avatar } = await getProfile();
+                setAvatarUrl(avatar);
+            } catch (error) {
+                console.log(error.response.data.message)
+            }
+        };
+
+        if (currentUser) {
+            fetchPrice();
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     // Handle logic
     const handleMenuChange = (menuItem) => {
@@ -49,7 +72,7 @@ function Header() {
 
                 <HoverDisplay
                     to={config.routes.home}
-                    Content="Explore"
+                    Content="Khám phá"
                     hoverContent={category}
                     linkHover={config.routes.home}
                     titleLinkHover="Dùng thử Manabo Business"
@@ -125,7 +148,7 @@ function Header() {
                                 hoverContent="Giỏ hàng của bạn đang trống."
                                 linkHover={config.routes.cart}
                                 titleLinkHover="Tiếp tục mua sắm"
-                                itemCount={1000}
+                                itemCount={1}
                             />
 
                             <HoverDisplay
@@ -136,13 +159,13 @@ function Header() {
                                 hoverContent="Bạn chưa có thông báo mới."
                                 linkHover={config.routes.home}
                                 titleLinkHover="Đi đến cài đặt thông báo ngay"
-                                notificationCount={1000}
+                                notificationCount={1}
                             />
                         </>
                     ) : (
                         <>
-                            <Button primary >Đăng nhập</Button>
-                            <Button subprimary >Đăng ký</Button>
+                            <Button href="/auth" primary >Đăng nhập</Button>
+                            <Button href="/auth" subprimary >Đăng ký</Button>
                         </>
                     )}
 
@@ -150,8 +173,8 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://sharedp.com/wp-content/uploads/2024/06/cute-girl-dp-new.jpg"
-                                alt="Nguyen Van A"
+                                src={avatarUrl}
+                                alt="HTT"
                             />
                         ) : (
                             <button className={cx('more-btn')}>

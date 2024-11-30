@@ -6,6 +6,14 @@
     position: relative;
 }
 
+.df {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .lesson-sidebar {
     width: 20%;
     background-color: #fff;

@@ -14,27 +14,34 @@ function CourseItem({ course }) {
 
 
     const handleCourseClick = (courseId) => {
-        navigate(`/course/${courseId}`);
+        navigate(`/course/${course.courseId}`);
     };
+
+    const formatCurrency = (amount) => {
+        return new Intl.NumberFormat('vi-VN', {
+            style: 'currency',
+            currency: 'VND', // Hoặc thay 'VND' bằng đơn vị tiền tệ khác nếu cần
+        }).format(amount);
+    };
+
 
     return (
         <div onClick={handleCourseClick} className={cx('courseItem')}>
             <div className={cx('course-image')}>
-                <img src={course.image} alt={course.name} className={cx('courseImage')} />
+                <img src={course.image} alt={course.courseName} className={cx('courseImage')} />
             </div>
             {course.isBestSeller && (
                 <div className={cx('bestSellerBadge')}><FontAwesomeIcon icon={faMedal} /></div>
             )}
             <div className={cx('course-title')}>
-                <h3 className={cx('courseName')}>{course.name}</h3>
-                <p className={cx('courseAuthor')}>{course.author}</p>
+                <h3 className={cx('courseName')}>{course.courseName}</h3>
+                <p className={cx('courseAuthor')}>{course.instructorName}</p>
                 <div className={cx('courseRate')}>
-                    <span>{course.rate}</span>
+                    <span>{course.rating}</span>
                     <span className={cx('iconStar')}>⭐</span>
-                    <span>({course.count})</span>
                 </div>
                 <div className={cx('coursePrice')}>
-                    <strong>{course.price} VND</strong>
+                    <strong>{`Giá ${formatCurrency(course.price)}`}</strong>
                 </div>
             </div>
 

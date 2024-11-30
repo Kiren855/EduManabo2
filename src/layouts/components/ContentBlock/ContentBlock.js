@@ -42,7 +42,7 @@ function ContentBlock({ title, content, type }) {
                     <div className={cx('content-block')}>
                         <h2>{title}</h2>
                         <div className={cx('content')}>
-                            {type === "text" && <p>{content}</p>}
+                            {type === "text" && <p dangerouslySetInnerHTML={{ __html: content }} />}
                             {type === "list" && Array.isArray(content) && (
                                 <ul>
                                     {content.map((item, index) => (

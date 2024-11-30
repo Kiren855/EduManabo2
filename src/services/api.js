@@ -4,9 +4,12 @@ import { getAccessToken, getRefreshToken, saveAccessToken, saveRefreshToken, cle
 
 const api = axios.create({
     baseURL: env.API_BASE_URL,
-    headers: {
-        'Content-Type': 'application/json',
-    },
+    // headers: {
+    //     'Content-Type': 'application/json',
+    // },
+    // headers: {
+    //     'Content-Type': 'multipart/form-data', // Mặc dù bạn có thể chỉ định nhưng không cần thiết khi dùng FormData
+    // },
 });
 
 // Thêm Interceptor để tự động thêm accessToken vào request
@@ -54,7 +57,7 @@ api.interceptors.response.use(
 
 // Hàm làm mới token định kỳ
 const startTokenRefreshInterval = () => {
-    const refreshInterval = 20 * 60 * 1000; // 20 phút
+    const refreshInterval = 4 * 60 * 1000; // 20 phút
     setInterval(async () => {
         const refreshToken = getRefreshToken();
         if (refreshToken) {

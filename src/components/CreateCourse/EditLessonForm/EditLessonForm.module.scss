@@ -1,0 +1,183 @@
+.upload-form {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 1px solid #2d2f31;
+    border-radius: 0px;
+    margin-top: 8px;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-gray-500);
+    color: white;
+    border: none;
+    border-radius: 0px;
+    height: 4.8rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: #44484d;
+    }
+
+    &:disabled {
+        background-color: #ddd;
+        cursor: not-allowed;
+    }
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.back-button {
+    background: none;
+    color: #fff;
+    font-size: 1.6rem;
+    border: none;
+    cursor: pointer;
+}
+
+.status {
+    display: flex;
+    gap: 20px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.save-button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.settings-button {
+    background: none;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.icon {
+    margin-right: 7px;
+}
+
+.df {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-player {
+    width: 100%; /* Video sẽ chiếm toàn bộ chiều rộng của thẻ chứa */
+    height: auto; /* Giữ tỷ lệ của video */
+    max-width: 100%; /* Đảm bảo video không vượt quá chiều rộng của thẻ chứa */
+    border-radius: 8px; /* Bo góc cho video (nếu cần) */
+    background-color: black; /* Thêm màu nền đen cho video nếu không có video */
+}
+
+.thumbnail-image {
+    width: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng của thẻ chứa */
+    height: auto; /* Tự động điều chỉnh chiều cao để giữ tỷ lệ ảnh */
+    object-fit: cover; /* Đảm bảo ảnh luôn đầy đủ thẻ chứa mà không bị biến dạng */
+    border-radius: 8px; /* Nếu bạn muốn góc ảnh bo tròn */
+}
+
+.thumbnail-container {
+    margin-top: 20px;
+}
+
+.input-field {
+    padding: 8px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.preview-container {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.preview-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.file-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.input-field {
+    margin: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.preview-container {
+    margin-top: 20px;
+    max-width: 100%;
+}
+
+.preview-video {
+    width: 100%;
+    max-width: 600px; /* Điều chỉnh theo nhu cầu */
+    border-radius: 4px;
+    background-color: black;
+}
+
+.preview-image {
+    width: 100%;
+    max-width: 600px; /* Điều chỉnh theo nhu cầu */
+    border-radius: 4px;
+    object-fit: cover;
+}

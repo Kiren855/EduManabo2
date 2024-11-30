@@ -33,6 +33,13 @@ import NotFound from '~/pages/NotFound';
 import CreateCourse from '~/components/InstructorComponents';
 import { HeaderOnly } from '~/layouts';
 import CoursePlanPage from '~/pages/CoursePlanPage';
+import UploadLessonForm from '~/components/CreateCourse/UploadLessonForm';
+import ExamLessonForm from '~/components/CreateCourse/ExamLessonForm';
+import ArticleForm from '~/components/CreateCourse/ArticleForm';
+import EditArticleForm from '~/components/CreateCourse/EditArticleForm';
+import EditLessonForm from '~/components/CreateCourse/EditLessonForm';
+import EditExamForm from '~/components/CreateCourse/EditExamForm';
+import CourseManagement from '~/pages/CourseManagement';
 
 // Public routes
 const publicRoutes = [
@@ -85,6 +92,13 @@ const publicRoutes = [
     { path: "*", component: NotFound },
     { path: config.routes.createCourse, component: CreateCourse, layout: HeaderOnly },
     { path: config.routes.editCourse, component: CoursePlanPage, layout: NothingLayout },
+    { path: config.routes.createVideoLesson, component: UploadLessonForm, layout: NothingLayout },
+    { path: config.routes.createExamLesson, component: ExamLessonForm, layout: NothingLayout },
+    { path: config.routes.createArticleLesson, component: ArticleForm, layout: NothingLayout },
+    { path: config.routes.editArticleLesson, component: EditArticleForm, layout: NothingLayout },
+    { path: config.routes.editVideoLesson, component: EditLessonForm, layout: NothingLayout },
+    { path: config.routes.editExamLesson, component: EditExamForm, layout: NothingLayout },
+    { path: config.routes.admin, component: CourseManagement },
 ];
 
 const privateRoutes = [];
